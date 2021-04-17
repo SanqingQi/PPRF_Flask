@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="//127.0.0.1:5000/static/css/addStyle.css">
+</head>
+<body>
+    <!-- partial:index.partial.html -->
+    <div class="site-wrap">
+        <nav class="site-nav">
+            <div class="name">
+                PPRF
+
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M11.5,22C11.64,22 11.77,22 11.9,21.96C12.55,21.82 13.09,21.38 13.34,20.78C13.44,20.54 13.5,20.27 13.5,20H9.5A2,2 0 0,0 11.5,22M18,10.5C18,7.43 15.86,4.86 13,4.18V3.5A1.5,1.5 0 0,0 11.5,2A1.5,1.5 0 0,0 10,3.5V4.18C7.13,4.86 5,7.43 5,10.5V16L3,18V19H20V18L18,16M19.97,10H21.97C21.82,6.79 20.24,3.97 17.85,2.15L16.42,3.58C18.46,5 19.82,7.35 19.97,10M6.58,3.58L5.15,2.15C2.76,3.97 1.18,6.79 1,10H3C3.18,7.35 4.54,5 6.58,3.58Z"></path>
+                </svg>
+            </div>
+            <ul>
+                <li><a href="//127.0.0.1:5000/admin">管理主页</a></li>
+                <li><a href="//127.0.0.1:5000/admin/userInfo/1">用户信息</a></li>
+                <li><a href="//127.0.0.1:5000/admin/checkRecord">识别记录</a></li>
+                <li><a href="//127.0.0.1:5000/admin/addUser">新增用户</a></li>
+                <li><a href="//127.0.0.1:5000/admin/deleteUser">删除用户</a></li>
+            </ul>
+
+            <div class="note">
+                <h3>Privacy Protecting</h3>
+                <p>Build a safe Internet</p>
+            </div>
+        </nav>
+        <main>
+            <header>
+                <div class="breadcrumbs">
+                    <a href="#0/">Home</a>
+                </div>
+                <h1 class="title">增加用户</h1>
+                <nav class="nav-tabs">
+                    <a href="#0" class="active">
+                        To Do
+                        <span>14</span>
+                    </a>
+                    <a href="#0">
+                        To Do
+                        <span>24</span>
+                    </a>
+                    <a href="#0">
+                        To Do
+                    </a>
+                </nav>
+            </header>
+            <div class="content-columns">
+                <div class="col">
+                    <div class="item">
+                        <h1 align="center">
+                        <font size="5">用户姓名</font>
+                        </h1>
+                    </div>
+                    <div class="item">
+                        <h1 align="center">
+                        <input style="width: 150px;height: 40px;border:0px;" type="text" name="username" id="username">
+                        </h1>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="item">
+                        <h1 align="center">
+                        <font size="5">用户ID</font>
+                        </h1>
+                    </div>
+                    <div class="item">
+                        <h1 align="center">
+                        <input style="width: 150px;height: 40px;border:0px;" type="text" name="userID" id="userID">
+                        </h1>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="item">
+                        <h1 align="center">
+                        <font size="5">用户部门</font>
+                        </h1>
+                    </div>
+                    <div class="item">
+                        <h1 align="center">
+                        <input style="width: 150px;height: 40px;border:0px;" type="text" name="userDepartment" id="userDepartment">
+                        </h1>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="item">
+                        <h1 align="center">
+                        <font size="5">确认提交</font>
+                        </h1>
+                    </div>
+                    <div class="item">
+                        <h1 align="center">
+                            <button onclick="getInput()" type="button"
+                                    style="background-color: #D9DFEA;width: 200px;height: 40px; border: 0px;color: #101620;">
+                                <font size="4"><b>Confirm</b></font>
+                            </button>
+                        </h1>
+                    </div>
+
+                     <script>
+                        function getInput() {
+                            var user=document.getElementById('username').value;
+                            var ID=document.getElementById('userID').value;
+                            var userDepartment=document.getElementById('userDepartment').value;
+                            var temp = document.createElement("form");
+                            temp.action=window.location.href;
+                            temp.method="post";
+                            temp.style.display="none";
+                            var opt1 = document.createElement("textarea");
+                            opt1.name='username';
+                            opt1.value=user;
+                            var opt2 = document.createElement("textarea");
+                            opt2.name='userID';
+                            opt2.value=ID;
+                            var opt3 = document.createElement("textarea");
+                            opt3.name='uerDepartment';
+                            opt3.value=userDepartment;
+                            var opt4 = document.createElement("textarea");
+                            opt4.name='status';
+                            opt4.value='Success';
+                            if(user.length==0 || ID.length==0 || userDepartment.length==0){
+                                alert("输入不能为空");
+                                opt4.value='Failed'
+                            }
+                            else {
+                                alert("新增成功")
+                            }
+                            temp.appendChild(opt1);
+                            temp.appendChild(opt2);
+                            temp.appendChild(opt3);
+                            temp.appendChild(opt4);
+                            document.body.appendChild(temp);
+                            temp.submit();
+                            return temp;
+                        }
+                    </script>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <!-- partial -->
+
+</body>
+</html>

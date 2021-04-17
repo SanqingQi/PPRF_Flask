@@ -57,7 +57,7 @@
                     </div>
                     <div class="item">
                         <h1 align="center">
-                        <font size="5">小王</font>
+                        <font size="5">{{ target_info[2] }}</font>
                         </h1>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
                     </div>
                     <div class="item">
                         <h1 align="center" id="userID">
-                        <font size="5">001</font>
+                        <font size="5">{{target_info[0]}}</font>
                         </h1>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                     </div>
                     <div class="item">
                         <h1 align="center">
-                        <font size="5">划水部</font>
+                        <font size="5">{{target_info[3]}}</font>
                         </h1>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
 
                      <script>
                          function selectByID() {
-                            var target_id=document.getElementById('select_id');
+                            var target_id=document.getElementById('select_id').value;
                             var temp = document.createElement("form");
                             temp.action=window.location.href;
                             temp.method="post";
@@ -123,7 +123,7 @@
                             return temp;
                          }
                         function deleteByID() {
-                            var target_id=document.getElementById('userID');
+                            var target_id=document.getElementById('userID').value;
                             var temp = document.createElement("form");
                             temp.action=window.location.href;
                             temp.method="post";

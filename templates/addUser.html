@@ -37,15 +37,10 @@
                 <h1 class="title">增加用户</h1>
                 <nav class="nav-tabs">
                     <a href="#0" class="active">
-                        To Do
-                        <span>14</span>
+                        请填写用户信息
                     </a>
-                    <a href="#0">
-                        To Do
-                        <span>24</span>
-                    </a>
-                    <a href="#0">
-                        To Do
+                    <a style="color: #0B121B">
+                        {{ successInfo }}
                     </a>
                 </nav>
             </header>
@@ -92,6 +87,19 @@
                 <div class="col">
                     <div class="item">
                         <h1 align="center">
+                        <font size="5">用户年龄</font>
+                        </h1>
+                    </div>
+                    <div class="item">
+                        <h1 align="center">
+                        <input style="width: 150px;height: 40px;border:0px;" type="text" name="userAge" id="userAge">
+                        </h1>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="item">
+                        <h1 align="center">
                         <font size="5">确认提交</font>
                         </h1>
                     </div>
@@ -109,6 +117,7 @@
                             var user=document.getElementById('username').value;
                             var ID=document.getElementById('userID').value;
                             var userDepartment=document.getElementById('userDepartment').value;
+                            var age=document.getElementById('userAge').value;
                             var temp = document.createElement("form");
                             temp.action=window.location.href;
                             temp.method="post";
@@ -120,22 +129,23 @@
                             opt2.name='userID';
                             opt2.value=ID;
                             var opt3 = document.createElement("textarea");
-                            opt3.name='uerDepartment';
+                            opt3.name='userDepartment';
                             opt3.value=userDepartment;
                             var opt4 = document.createElement("textarea");
                             opt4.name='status';
                             opt4.value='Success';
-                            if(user.length==0 || ID.length==0 || userDepartment.length==0){
+                            var opt5 = document.createElement("textarea");
+                            opt5.name='userAge';
+                            opt5.value=age;
+                            if(user.length==0 || ID.length==0 || userDepartment.length==0 || age.length==0){
                                 alert("输入不能为空");
                                 opt4.value='Failed'
-                            }
-                            else {
-                                alert("新增成功")
                             }
                             temp.appendChild(opt1);
                             temp.appendChild(opt2);
                             temp.appendChild(opt3);
                             temp.appendChild(opt4);
+                            temp.appendChild(opt5);
                             document.body.appendChild(temp);
                             temp.submit();
                             return temp;

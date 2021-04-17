@@ -131,6 +131,9 @@ main > header {
   border-top: 4px solid #E37E55;
 }
 .content-columns .col:nth-child(4) {
+  border-top: 4px solid #1f6f4a;
+}
+.content-columns .col:nth-child(5) {
   border-top: 4px solid #EBBD41;
 }
 

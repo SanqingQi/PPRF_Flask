@@ -1,5 +1,5 @@
-import util
+import datetime
 
-ans= util.select_by_index(3)
-for i in ans:
-    print(i)
+now_time = str(datetime.datetime.now())
+now_time=now_time.split(' ')[0].split('-')
+print(int(now_time[1]))

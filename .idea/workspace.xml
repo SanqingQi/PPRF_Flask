@@ -77,7 +77,7 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Flask server.PPFR_Flask">
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PPFR_Flask" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -142,17 +142,7 @@
       <list>
         <serviceView>
           <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:PPRF_Info" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:PPRF_Info" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@24292281" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </treeState>
         </serviceView>
@@ -178,6 +168,7 @@
       <workItem from="1618547448360" duration="2862000" />
       <workItem from="1618653862124" duration="344000" />
       <workItem from="1618655015979" duration="7619000" />
+      <workItem from="1618723210215" duration="6364000" />
     </task>
     <servers />
   </component>
@@ -189,26 +180,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1618655117402" />
-    <state width="1493" height="226" key="GridCell.Tab.0.bottom" timestamp="1618662679849">
+    <state width="1493" height="132" key="GridCell.Tab.0.bottom" timestamp="1618730856601">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="226" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1618662679849" />
-    <state width="1493" height="226" key="GridCell.Tab.0.center" timestamp="1618662679849">
+    <state width="1493" height="132" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1618730856601" />
+    <state width="1493" height="132" key="GridCell.Tab.0.center" timestamp="1618730856601">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="226" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1618662679849" />
-    <state width="1493" height="226" key="GridCell.Tab.0.left" timestamp="1618662679849">
+    <state width="1493" height="132" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1618730856601" />
+    <state width="1493" height="132" key="GridCell.Tab.0.left" timestamp="1618730856601">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="226" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1618662679849" />
-    <state width="1493" height="226" key="GridCell.Tab.0.right" timestamp="1618662679849">
+    <state width="1493" height="132" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1618730856601" />
+    <state width="1493" height="132" key="GridCell.Tab.0.right" timestamp="1618730856601">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="226" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1618662679849" />
+    <state width="1493" height="132" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1618730856601" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PPFR_Flask$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1618658277083" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/PPFR_Flask$PPFR_Flask.coverage" NAME="PPFR_Flask Coverage Results" MODIFIED="1618660013851" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/PPFR_Flask$test.coverage" NAME="test Coverage Results" MODIFIED="1618661300406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PPFR_Flask$PPFR_Flask.coverage" NAME="PPFR_Flask Coverage Results" MODIFIED="1618730856596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/PPFR_Flask$test.coverage" NAME="test Coverage Results" MODIFIED="1618728795082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

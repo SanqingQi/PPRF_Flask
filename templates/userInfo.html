@@ -10,12 +10,13 @@
     <div class="site-wrap">
         <nav class="site-nav">
             <div class="name">
-                PPRF
+                PPFR
 
                 <svg width="24" height="24" viewBox="0 0 24 24">
                     <path d="M11.5,22C11.64,22 11.77,22 11.9,21.96C12.55,21.82 13.09,21.38 13.34,20.78C13.44,20.54 13.5,20.27 13.5,20H9.5A2,2 0 0,0 11.5,22M18,10.5C18,7.43 15.86,4.86 13,4.18V3.5A1.5,1.5 0 0,0 11.5,2A1.5,1.5 0 0,0 10,3.5V4.18C7.13,4.86 5,7.43 5,10.5V16L3,18V19H20V18L18,16M19.97,10H21.97C21.82,6.79 20.24,3.97 17.85,2.15L16.42,3.58C18.46,5 19.82,7.35 19.97,10M6.58,3.58L5.15,2.15C2.76,3.97 1.18,6.79 1,10H3C3.18,7.35 4.54,5 6.58,3.58Z"></path>
                 </svg>
             </div>
+
             <ul>
                 <li><a href="//127.0.0.1:5000/admin">管理主页</a></li>
                 <li><a href="//127.0.0.1:5000/admin/userInfo/1">用户信息</a></li>
@@ -32,8 +33,17 @@
         <main>
             <header>
                 <div class="breadcrumbs">
-                    <a href="#0/">Home</a>
+                    <a id="time"></a>
                 </div>
+
+                <script>
+                var date = new Date()<!--获得日期数据-->
+                var y = date.getFullYear();<!--年-->
+                var m = date.getMonth()+1;<!--月，这里的月份必须要+1才是当前月份-->
+                var d = date.getDate(); <!--日，getDay是获得当前星期几（0-6），getDate是获得当前日期-->
+                document.getElementById("time").innerHTML = "当前日期："+y+"-"+m+"-"+d;
+                </script>
+
                 <h1 class="title">用户信息</h1>
                 <nav class="nav-tabs">
                     <a href="#0">
@@ -56,64 +66,60 @@
             </header>
             <div class="content-columns">
                 <div class="col">
-                    <div class="item">
+
                         <h1 align="center">
                         <font size="5">用户姓名</font>
                         </h1>
-                    </div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
+
+                    {% for info in infos %}
+                        <div class="item">
+                             <h1 align="center">
+                            <font size="4"> {{ info[2] }}</font>
+                            </h1>
+                        </div>
+                    {% endfor %}
                 </div>
                 <div class="col">
-                    <div class="item">
+
                         <h1 align="center">
                         <font size="5">用户ID</font>
                         </h1>
-                    </div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
+
+                    {% for info in infos %}
+                        <div class="item">
+                             <h1 align="center">
+                            <font size="4"> {{ info[0] }}</font>
+                            </h1>
+                        </div>
+                    {% endfor %}
                 </div>
                 <div class="col">
-                    <div class="item">
+
                         <h1 align="center">
                         <font size="5">用户部门</font>
                         </h1>
-                    </div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
+
+                    {% for info in infos %}
+                        <div class="item">
+                             <h1 align="center">
+                            <font size="4"> {{ info[3] }}</font>
+                            </h1>
+                        </div>
+                    {% endfor %}
                 </div>
                 <div class="col">
-                    <div class="item">
+
                         <h1 align="center">
                         <font size="5">用户年龄</font>
                         </h1>
-                    </div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
+
+                    {% for info in infos %}
+                        <div class="item">
+                             <h1 align="center">
+                            <font size="4"> {{ info[1] }}</font>
+                            </h1>
+                        </div>
+                    {% endfor %}
                 </div>
 
             </div>

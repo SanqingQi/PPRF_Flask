@@ -1,6 +1,8 @@
 from flask import Flask,render_template,request,redirect,url_for
 import util
-import math.ceil as ceil
+import math
+import os
+import datetime
 
 app = Flask(__name__)
 
@@ -77,21 +79,48 @@ def userInfo(page=1):
     if(page<1):
         page = 1
     start_index=8*page-8
-    count=util.get_count()
-    total_page=ceil(count/8)
+    count=(util.get_count()[0])
+    total_page=math.ceil(count/8)
     if start_index>count:
         page=total_page
         userInfo=util.select_by_index(8*total_page-8)
     else:
         userInfo=util.select_by_index(start_index)
-    return render_template('userInfo.html', info=userInfo, page=page)
+    return render_template('userInfo.html', infos=userInfo, page=page)
 
 @app.route('/admin/checkRecord',methods=["POST", "GET"])
 def checkRecord():
     """
-    记录日志，不过建议使用一个txt文件记录每天的日志 这里就先不弄了
+    记录日志
     """
-    return render_template('checkRecord.html')
+    if request.method=='POST':
+        year=request.form['year']
+        month=str(int(request.form['month']))
+        day=request.form['day']
+    else:
+        now_time = str(datetime.datetime.now())
+        now_time = now_time.split(' ')[0].split('-')
+        year=now_time[0]
+        month=str(int(now_time[1]))
+        day=now_time[2]
+    fileName ='record/'+ year+'_'+month+'_'+day+ '.txt'
+    date = year+'年'+month+'月'+day+'日 '
+    successInfo="暂时无人认证"
+    info = []
+    if not os.path.exists(fileName):
+        f = open(fileName, 'w')
+        f.close()
+        successInfo = "暂时无人认证"
+        info = [['NULL', 'NULL', 'NULL', 'NULL', 'NULL!']]
+    else:
+        with open(fileName, 'r', encoding='utf-8') as f:
+            for line in f:
+                line = line.split('-')
+                info.append(line)
+                successInfo = ''
+        if len(info)==0:
+            info = [['NULL', 'NULL', 'NULL', 'NULL', 'NULL!']]
+    return render_template('checkRecord.html', date=date,successInfo=successInfo,infos=info)
 
 if __name__ == '__main__':
     app.run()

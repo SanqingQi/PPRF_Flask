@@ -1,5 +1,5 @@
-import datetime
+import numpy as np
 
-now_time = str(datetime.datetime.now())
-now_time=now_time.split(' ')[0].split('-')
-print(int(now_time[1]))
+a=np.array([1,2,3])
+print(type(np.sum(a*a)))
+print(np.sum(a*a))

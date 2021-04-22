@@ -3,6 +3,9 @@ import util
 import math
 import os
 import datetime
+import numpy as np
+import background
+from threading import Thread
 
 app = Flask(__name__)
 
@@ -74,6 +77,7 @@ def userInfo(page=1):
     """
     select user info
     每页只能展示8个用户
+
     """
     page=int(page)
     if(page<1):
@@ -122,5 +126,12 @@ def checkRecord():
             info = [['NULL', 'NULL', 'NULL', 'NULL', 'NULL!']]
     return render_template('checkRecord.html', date=date,successInfo=successInfo,infos=info)
 
+
 if __name__ == '__main__':
-    app.run()
+    t1 = Thread(target=background.run(), args=[])
+    t2 = Thread(target=app.run(), args=[])
+    t1.start()
+    t2.start()
+    t1.join()
+    t2.join()
+

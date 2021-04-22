@@ -2,6 +2,8 @@
 # -*- coding:utf-8 -*-
 import numpy as np
 from PIL import Image
+import datetime
+import time
 import random
 import socket
 import sqlite3
@@ -151,6 +153,23 @@ def decode(share_1,share_2):
     map_negative_range = np.vectorize(lambda element: element if element <= Q / 2 else element - Q)
     return map_negative_range(result) / BASE ** PRECISION_FRACTIONAL
 
+def write_record(index):
+    ans=select_by_index(index,1)[0]
+    ID=ans[0]
+    name=ans[2]
+    age=ans[1]
+    Department=ans[3]
+    now_time = str(datetime.datetime.now())
+    now_time = now_time.split(' ')[0].split('-')
+    year = now_time[0]
+    month = str(int(now_time[1]))
+    day = now_time[2]
+    hour=time.localtime().tm_hour
+    min=time.localtime().tm_min
+    info=name+'-'+str(ID)+'-'+str(age)+'-'+Department+'-'+str(hour)+':'+str(min)+'\n'
+    fileName = 'record/' + year + '_' + month + '_' + day + '.txt'
+    with open(fileName, 'w+', encoding='utf-8') as f:
+        f.write(info)
 
 def np2img(array):
     """
